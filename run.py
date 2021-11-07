@@ -1,14 +1,18 @@
 import random
 from words import words
+import os
 
 
 def welcome():
     """
     Show welcome message and ask user if they would like to see instructions.
     """
+    # clear terminal
+    os.system('cls' if os.name == 'nt' else 'clear')
     # Welcome message.
     print("{:-^45}".format("HANGMAN"))
     print("\n")
+
     print("{:^45}".format("Welcome to Hangman!\n"))
     print("{:^45}".format("Before we start, would you like to see "))
     print("{:^45}".format("the instructions or are you good to go?\n"))
@@ -31,7 +35,9 @@ def instructions():
     """
     Clear terminal and show instructions
     """
-    # clear()
+    # clear terminal
+    os.system('cls' if os.name == 'nt' else 'clear')
+    # print instructions
     print("{:^45}".format("How to play:\n"))
     print("{:^45}".format("To play hangman, all you need to do is guess"))
     print("{:^45}".format("the word one letter at a time.\n"))
@@ -57,7 +63,9 @@ def instructions():
 
 
 def play():
-    # clear
+    # clear termainal
+    os.system('cls' if os.name == 'nt' else 'clear')
+    # run game
     print("Start game")
 
 
