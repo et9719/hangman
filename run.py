@@ -1,6 +1,7 @@
+import os
 import random
 from words import words
-import os
+
 
 
 def welcome():
@@ -62,18 +63,87 @@ def instructions():
         welcome()
 
 
+def get_word():
+    """
+    Get word from words.py words list for user to guess.
+    """
+    word = random.choice(words)
+    return word.upper()
+
+
 def play():
     # clear termainal
     os.system('cls' if os.name == 'nt' else 'clear')
     # run game
-    print("Start game")
+    print("run")
 
-
-# def get_word():
-#     """
-#     Get word from words.py words list for user to guess.
-#     """
-#     word = random.choice(words)
-#     return word.upper()
 
 welcome()
+
+
+def hangman_img(tries):
+    stages = [ """
+                  --------
+                  |      |
+                  |      o
+                  |    \\|/
+                  |      |
+                  |     /\\
+                  ---
+               """,
+               """
+                  --------
+                  |      |
+                  |      o
+                  |    \\|/
+                  |      |
+                  |     /
+                  ---
+               """,
+               """
+                  --------
+                  |      |
+                  |      o
+                  |    \\|/
+                  |      |
+                  |     
+                  ---
+               """,
+               """
+                  --------
+                  |      |
+                  |      o
+                  |    \\|
+                  |      |
+                  |     
+                  ---
+               """,
+               """
+                  --------
+                  |      |
+                  |      o
+                  |      |
+                  |      |
+                  |     
+                  ---
+               """,
+               """
+                  --------
+                  |      |
+                  |      o
+                  |      
+                  |      
+                  |     
+                  ---
+               """,
+               """
+                  --------
+                  |      |
+                  |      
+                  |      
+                  |      
+                  |     
+                  ---
+               """
+    ]
+    return stages[tries]
