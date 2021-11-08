@@ -1,7 +1,9 @@
+"""
+All imports.
+"""
 import os
 import random
 from words import words
-
 
 
 def welcome():
@@ -9,7 +11,7 @@ def welcome():
     Show welcome message and ask user if they would like to see instructions.
     """
     # clear terminal
-    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system("cls" if os.name == "nt" else "clear")
     # Welcome message.
     print("{:-^80}".format("HANGMAN"))
     print("\n")
@@ -24,7 +26,9 @@ def welcome():
     while see_instructions != "1" and see_instructions != "2":
         print("{:^80}".format("Invalid input,"))
         print("{:^80}".format("Please type 1 to see the instructions,"))
-        see_instructions = input("{:^80}".format("or 2 to skip them and start the game:\n"))
+        see_instructions = input(
+            "{:^80}".format("or 2 to skip them and start the game:\n")
+        )
     # Take user to relevent page.
     if see_instructions == "1":
         instructions()
@@ -37,7 +41,7 @@ def instructions():
     Clear terminal and show instructions
     """
     # clear terminal
-    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system("cls" if os.name == "nt" else "clear")
     # print instructions
     print("{:^80}".format("How to play:\n"))
     print("{:^80}".format("To play hangman, all you need to do is guess"))
@@ -63,87 +67,45 @@ def instructions():
         welcome()
 
 
-def get_word():
-    """
-    Get word from words.py words list for user to guess.
-    """
-    word = random.choice(words)
-    return word.upper()
-
-
 def play():
-    # clear termainal
-    os.system('cls' if os.name == 'nt' else 'clear')
-    # run game
-    print("run")
+    """
+    Get word from words.py, ask user to guess a letter and compare results.
+    """
+    # Get word from words.py words list.
+    word = random.choice(words)
+    print(word)
+    # clear terminal
+    os.system("cls" if os.name == "nt" else "clear")
+    # Display title
+    print("{:-^80}".format("HANGMAN"))
+    print("\n")
 
+    # test printing word.
+    print("{:^80}".format(word))
+    
+    # write here
+    tries = 6
+    guessed = False
+    guessed_letters = []
+    while guessed == False and tries > 0:
+        # Print number of guesses left.
+        print("{:^80}".format("Tries left = ", tries))
+        # Ask user to enter a letter.
+        users_guess = input("{:^80}".format("Please enter a letter:\n")).upper()
+        # Print guessed letters.
+        reveal_word = "_" * len(word)
+        print("{:^80}".format(reveal_word))
+        # write here.
+        if len(users_guess) == 1 and users_guess.isalpha():
+            if users_guess in guessed_letters:
+                print("{:^80}".format("You already guessed", users_guess))
+            elif users_guess not in word:
+                print("{:^80}".format("Incorrect guess, try again."))
+                tries -= 1
+                guessed_letters.append(users_guess)
+            else:
+                print("{:^80}".format("correct guess."))
+        else:
+            print("{:^80}".format("Invalid guess, letters only."))
 
-welcome()
-
-
-def hangman_img(tries):
-    stages = [ """
-                  --------
-                  |      |
-                  |      o
-                  |    \\|/
-                  |      |
-                  |     /\\
-                  ---
-               """,
-               """
-                  --------
-                  |      |
-                  |      o
-                  |    \\|/
-                  |      |
-                  |     /
-                  ---
-               """,
-               """
-                  --------
-                  |      |
-                  |      o
-                  |    \\|/
-                  |      |
-                  |     
-                  ---
-               """,
-               """
-                  --------
-                  |      |
-                  |      o
-                  |    \\|
-                  |      |
-                  |     
-                  ---
-               """,
-               """
-                  --------
-                  |      |
-                  |      o
-                  |      |
-                  |      |
-                  |     
-                  ---
-               """,
-               """
-                  --------
-                  |      |
-                  |      o
-                  |      
-                  |      
-                  |     
-                  ---
-               """,
-               """
-                  --------
-                  |      |
-                  |      
-                  |      
-                  |      
-                  |     
-                  ---
-               """
-    ]
-    return stages[tries]
+play()

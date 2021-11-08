@@ -18,3 +18,4 @@
 
 <!-- Credits -->
 random word generator = https://randomwordgenerator.com/
+code beautifier = https://codebeautify.org/python-formatter-beautifier
