@@ -76,7 +76,6 @@ def play():
     tries = 6
     guessed = False
     guessed_letters = []
-    word_letters = set(word)
     # Get word from words.py words list.
     print(word)
     # clear terminal
@@ -101,8 +100,8 @@ def play():
         print("\n")
         # Print guessed letters.
         print("{:^80}".format("letters revealed in word so far:"))
-        reveal_word = "_" * len(word)
-        print("{:^80}".format(reveal_word))
+        reveal_word = [letter if letter in guessed_letters else "_" for letter in word]
+        print("{:^80}".format(" ".join(reveal_word)))
         print("\n")
         # write here.
         if len(users_guess) == 1 and users_guess.isalpha():
