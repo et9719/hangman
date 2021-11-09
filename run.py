@@ -71,41 +71,53 @@ def play():
     """
     Get word from words.py, ask user to guess a letter and compare results.
     """
-    # Get word from words.py words list.
+    # write here ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     word = random.choice(words)
-    print(word)
-    # clear terminal
-    os.system("cls" if os.name == "nt" else "clear")
-    # Display title
-    print("{:-^80}".format("HANGMAN"))
-    print("\n")
-
-    # test printing word.
-    print("{:^80}".format(word))
-    
-    # write here
     tries = 6
     guessed = False
     guessed_letters = []
-    while guessed == False and tries > 0:
-        # Print number of guesses left.
-        print("{:^80}".format("Tries left = ", tries))
+    word_letters = set(word)
+    # Get word from words.py words list.
+    print(word)
+    # clear terminal
+    os.system("cls" if os.name == "nt" else "clear")
+    # test printing word. ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    print("{:^80}".format(word))
+    # write here ~~~~~~~~~~~~~~~~~~~~~~
+    while tries > 0 and guessed is False:
+        # Display title
+        print("{:-^80}".format("HANGMAN"))
+        print("\n")
+        # print letters user has guessed so far.
+        print("{:^80}".format("You have used these letters so far:"))
+        print("{:^80}".format(" ".join(guessed_letters)))
+        print("\n")
         # Ask user to enter a letter.
         users_guess = input("{:^80}".format("Please enter a letter:\n")).upper()
+        print("\n")
+        # Print number of guesses left.
+        print("{:^80}".format("Tries left = "))
+        print("{:^80}".format(tries))
+        print("\n")
         # Print guessed letters.
+        print("{:^80}".format("letters revealed in word so far:"))
         reveal_word = "_" * len(word)
         print("{:^80}".format(reveal_word))
+        print("\n")
         # write here.
         if len(users_guess) == 1 and users_guess.isalpha():
             if users_guess in guessed_letters:
-                print("{:^80}".format("You already guessed", users_guess))
+                print("{:^80}".format("You already guessed"))
             elif users_guess not in word:
-                print("{:^80}".format("Incorrect guess, try again."))
+                print("{:^80}".format(users_guess))
+                print("{:^80}".format("is not in the word, try again."))
                 tries -= 1
                 guessed_letters.append(users_guess)
             else:
                 print("{:^80}".format("correct guess."))
+                guessed_letters.append(users_guess)
         else:
             print("{:^80}".format("Invalid guess, letters only."))
 
-play()
+
+welcome()
