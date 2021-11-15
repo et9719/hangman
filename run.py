@@ -46,16 +46,18 @@ def instructions():
     os.system("cls" if os.name == "nt" else "clear")
     # print instructions
     print("How to play:\n\nTo play hangman, all you need to do is guess the word\
- one letter at a time.\n\n1. Type a letter of your choice and hit enter.\n2. If\
- your guess is correct the letter will show within the hidden word.\n3. If your\
- guess is incorrect a section of the hangman picture will appear.\n4. Keep guessing\
- until either you guess the correct word or you run out of tries.\n")
+ one letter at a time.\n\n1. Type a letter of your choice and hit \
+ enter.\n2. If your guess is correct the letter will show within \
+ the hidden word.\n3. If your guess is incorrect a section of the hangman \
+ picture will appear.\n4. Keep guessing until either you guess the\
+ correct word or you run out of tries.\n")
     # Ask user if they are ready to play.
     print("Are you ready to play?")
     ready = input("Please type 1 for yes and 2 for no:\n")
     # Make sure users input is valid.
     if ready != "1" and ready != "2":
-        ready = input("Invalid input, if you are ready press 1 if not press 2:\n")
+        ready = input("Invalid input, if you are ready press\
+ 1 if not press 2:\n")
     # Take user to relevent page.
     if ready == "1":
         play()
@@ -67,10 +69,12 @@ def play_again():
     """
     Ask user if they would like to play the game again.
     """
-    play_again_q = input("Would you like to play again?\nType 1 for Yes or 2 for No:\n")
+    play_again_q = input("Would you like to play again?\nType 1\
+ for Yes or 2 for No:\n")
     # Make sure users input is valid.
     if play_again_q != "1" and play_again_q != "2":
-        play_again_q = input("Invalid input, if you want to play again press 1 if not press 2:\n")
+        play_again_q = input("Invalid input, if you want to play\
+ again press 1 if not press 2:\n")
     # Take user to relevent page.
     if play_again_q == "1":
         play()
