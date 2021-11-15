@@ -30,7 +30,7 @@ def welcome():
     # Make sure users input is valid.
     if see_instructions != "1" and see_instructions != "2":
         see_instructions = input("\nInvalid input, Please type 1 to see the\
- instructions, or 2 to skip them and start the game:\n")
+ instructions, or 2 to skip them and \nstart the game:\n")
     # Take user to relevent page.
     if see_instructions == "1":
         instructions()

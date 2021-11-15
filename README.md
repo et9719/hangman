@@ -24,6 +24,15 @@ The Python results came back with the following:
 
 - 7x line too long 
 
+- To fix this I added a "\" within the print statements to shorten the lines while keeping the same text.
+However, 1 out of the 7 lines that were too long was:
+reveal_word = [letter if letter in guessed_letters else "_" for letter in word]
+When trying to add "\" to this line it came back with more errors as this is between brackets and not just a string.
+
+<img src="images/" alt="Add Screenshot of the new errors">  ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+### Manual Testing 
+
 
 ### Bugs 
 1. I found that when a user guesses every letter in a word, the loop isn't ending meaning that if the user still has tries left even if they have guessed every letter it will keep asking them to enter another letter until the user runs out of tries. 
