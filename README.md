@@ -105,7 +105,9 @@ However, 1 out of the 7 lines that were too long was:
 reveal_word = [letter if letter in guessed_letters else "_" for letter in word]
 When trying to add "\" to this line it came back with more errors as this is between brackets and not just a string.
 
-<img src="images/valid.png" alt="Screenshot of the new errors"> ~~~~~~~~~~~~~~~~~~~
+<img src="images/valid.png" alt="Screenshot of the new errors"> 
+
+<!--Add text explaining if you left this as is or if there was anything you could do to get rid of this error-->
 
 ### Manual Testing 
 

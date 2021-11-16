@@ -100,6 +100,8 @@ def play():
     while tries > 0 and guessed is False:
         reveal_word = [letter if letter in guessed_letters else "_" for letter in word]
         print("\033[1;36;40m")
+        print(hangman_img(tries))
+        print("\n")
         print(" ".join(reveal_word))
         print("\n")
         # Ask user to enter a letter.
@@ -115,7 +117,6 @@ def play():
                 print("\033[1;31;40mYou already guessed ", users_guess, "\n")
                 print("\033[1;36;40mYou have used these letters so far:")
                 print(" ".join(guessed_letters))
-                print("\n")
             # If the users guess is not in the word:
             elif users_guess not in word:
                 title()
@@ -123,11 +124,9 @@ def play():
  the word, try again.")
                 tries -= 1
                 print("\033[1;36;40mTries left = ", tries)
-                print("\n")
                 guessed_letters.append(users_guess)
                 print("You have used these letters so far:")
                 print(" ".join(guessed_letters))
-                print("\n")
             # If the user guesses a correct letter:
             else:
                 title()
@@ -135,8 +134,7 @@ def play():
                 guessed_letters.append(users_guess)
                 print("\033[1;36;40mYou have used these letters so far:")
                 print(" ".join(guessed_letters))
-                print("\n")
-                if "_" not in reveal_word:
+                if "_" not in reveal_word:     # Problem with changing guessed to true.
                     guessed = True
         # If users input is not valid:
         else:
@@ -152,9 +150,79 @@ def play():
     else:
         os.system("cls" if os.name == "nt" else "clear")
         title()
+        print(hangman_img(tries))
         print("\033[1;31;40mYour out of Tries :(")
         print("The word was", word, "\n")
         play_again()
+
+
+def hangman_img(tries):
+    stages = [
+        """
+            --------
+            |      |
+            |      o
+            |     \\|/
+            |      |
+            |     / \\
+            ---
+            """,
+        """
+            --------
+            |      |
+            |      o
+            |     \\|/
+            |      |
+            |     /
+            ---
+            """,
+        """
+            --------
+            |      |
+            |      o
+            |     \\|/
+            |      |
+            |
+            ---
+            """,
+        """
+            --------
+            |      |
+            |      o
+            |     \\|
+            |      |
+            |
+            ---
+            """,
+        """
+            --------
+            |      |
+            |      o
+            |      |
+            |      |
+            |
+            ---
+            """,
+        """
+            --------
+            |      |
+            |      o
+            |
+            |
+            |
+            ---
+            """,
+        """
+            --------
+            |      |
+            |
+            |
+            |
+            |
+            ---
+            """,
+    ]
+    return stages[tries]
 
 
 welcome()
