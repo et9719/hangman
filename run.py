@@ -11,7 +11,7 @@ def title():
     Print hangman title.
     """
     print("\033[1;36;40m")
-    print("HANGMAN".center(82, "-"))
+    print("HANGMAN".center(80, "-"))
     print("\n")
 
 
@@ -23,7 +23,7 @@ def welcome():
     os.system("cls" if os.name == "nt" else "clear")
     # Welcome message.
     title()
-    print("Welcome to Hangman!\n\nBefore we start, would you like to see the\
+    print("\033[1;36;40mWelcome to Hangman!\n\nBefore we start, would you like to see the\
  instructions or are you good to go?")
     # Ask user to choose if they want to see instructions or not.
     see_instructions = input("Please type 1 to see the instructions, or 2 for\
