@@ -11,7 +11,7 @@ def title():
     Print hangman title.
     """
     print("\033[1;36;40m")
-    print("HANGMAN".center(80, "-"))
+    print("HANGMAN".center(82, "-"))
     print("\n")
 
 
