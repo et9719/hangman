@@ -10,18 +10,23 @@ This is done by using python to generate the word and check if the users guesses
 ## Table of contents 
 
 1. [Plans and structure](#plans-and-structure)
-2. [Features](#features)
-    - [](#)
-    - [](#)
-    - [](#)
-    - [](#)    
-3. [Testing](#testing)
+2. [Color scheme](#color-scheme)
+3. [Features](#features)
+    - [Welcome page](#welcome-page)
+    - [Instructions](#instructions)
+    - [Game](#game)
+    - [Losing message](#losing-message)   
+    - [Winning message](#winning-message) 
+    - [Colored text](#colored-text) 
+    - [Clear termainal](#clear-termainal)
+    - [Future features](#future-features)
+4. [Testing](#testing)
     - [Python](#python)
     - [Manual Testing](#manual-testing)
     - [Bugs ](#bugs)
-4. [Deployment](#deployment)
-5. [Finished product](#finished-product)
-6. [Credits](#credits)
+5. [Deployment](#deployment)
+6. [Finished product](#finished-product)
+7. [Credits](#credits)
     
 ## Plans and structure 
 
@@ -34,10 +39,49 @@ Throughout the process of making this project I decided to change a couple of th
 
 I decided that these two things were not as important as all the other functions so I would like to either implement them if i have time to at the end of the process or if not I would like to impliment them in the future so I can continue to use this game with family and friends. 
 
+## Color scheme
+I decided to add a color scheme to provide a better user experience. By showing error messages and incorrect guesses in red text and correct guesses in green text to make it clearer to the user.
+- General text, Cyan ("\033[1;36;40m").
+- Error messages/Wrong guesses, Red ("\033[1;31;40m").
+- Correct guesses, Green ("\033[1;32;40m").
 
 ## Features 
 
-<!-- Add features section -->
+### Welcome page
+- This is the first page you see when the app loads. On this page there is a welcome messgae and a question to the user. The questions asks the user if they want to see the instructions or if they are happy to go ahead and play without seeing them. 
+<img src="images/feature-welcome.png" alt="Screenshot of Welcome page">
+
+### Instructions 
+- The instructions page explains to the user how the game is played and then asks the user if they are ready for the game.
+<img src="images/feature-inst.png" alt="Screenshot of instructions page">
+
+### Game
+- When the user starts the game its shows the user the length of the word they are guessing and asks the user to enter a letter.
+<img src="images/feature-game.png" alt="Screenshot of game page">
+- While the user is playing the game page also shows other things such as if there last guess was valid, correct or incorrect, how many tries the user has left, what letters the user has used so far and the letters guessed correctly in their positions within the word. 
+<img src="images/feature-game-play.png" alt="Screenshot of game page whilst being played">
+
+### Losing message
+- If a user runs out of guesses it will take them to a page that tells them they are out of tries, shows them what the word was and asks if they would liek to play again.
+<img src="images/feature-lose.png" alt="Screenshot of the end of the game if the player has lost">
+
+### Winning message
+- <!--Add description once I have this working-->
+<img src="images/feature-win.png" alt="Screenshot of the end of the game if the player has won">
+
+### Colored text 
+- I used three different colors for the text in this game to understand the reasons behind the colors have a look at the [Color scheme](#color-scheme).
+
+<img src="images/color-red.png" alt="Screenshot of an error message in red">
+<img src="images/color-green.png" alt="Screenshot of a correct messgae in green">
+<img src="images/color-cyan.png" alt="Screenshot of the general text in cyan">
+
+### Clear termainal
+- Between each page or turn in the game I have cleared the terminal to make it clearer for the user to read. 
+
+### Future features
+- I would like to introduce a choice of levels so the user can decide if they want to guess an easy word or a hard word.
+- I would also like to add a visual image of hangman so the user can see how many tries they have left in the more traditional way. 
 
 ## Testing
 
@@ -131,14 +175,40 @@ When trying to add "\" to this line it came back with more errors as this is bet
 
 ## Deployment 
 
-<!-- Add Deployment -->
+There were many steps to deploying this project to Heroku:
+
+1. If I had installed any packages to gitpod, I would need to add then to a list of requirements. 
+- To do this I would have typed pip3 freeze > requirements.txt and hit enter, this would update the requirements.txt file.
+- I'd need to commit and push this to github.
+- Heroku will use this list to install the dependencies into the application before the project is run.
+- However I didnt need to do this as I had no packages installed.
+2. I went over to my Heroku dashboard and clicked on 'create a new app'.
+3. I chose a name for my app, every app has to have a unique name so i couldnt call it hangman as this was already taken so i went for hang-the-guy.
+4. Selected my region and clicked create app. 
+5. I then went to the tab at the top of the page and clicked on settings. 
+6. Some apps will include sensitive data in the gitpod workspace that isnt in the github repository because it has been deliberately protected in the gitnore.file. I didnt have any sensitive data to protact but if I had done I would have needed to create a config var to allow Heroku access to this data. 
+ - To do this, I would have clicked reveal config vars.
+ - Filled in the key for example: CREDS
+ - Then copy and pasted the contents of that 'CREDS' file into the value field and clicked add. 
+7. I added the buildpacks needed by clicking on the buildpack button.
+ - Here I selected pyhton and pressed save changes.
+ - Then repeated teh same process but selected nodejs this time.
+ - making sure it was done in that order with python at the top and nodejs under.
+8. I scrolled back up to the tab at the top and clicked deploy.
+9. I selected github as the deployment method and clicked connect to github.
+10. Once this is selected I then searched for my github repository name, and connected to the correct repository.
+11. Then I scrolled down, here there were two options.
+ - The first option being to enable automatic deployment, which means that Heroku will rebuild the app every time I pushed a change to github.
+ - The other option being to manually deploy, which is the choice i went for with this project.
+12. When all the code is recieved from github there is a view button that it a link to the running app, I clicked this to make sure everything was running as expected.
 
 ## Finished product
 
 <!-- Add finished product -->
 
 ## Credits 
-flow chart - https://www.lucidchart.com/pages/
-random word generator = https://randomwordgenerator.com/
-code beautifier = https://codebeautify.org/python-formatter-beautifier
-validator -http://pep8online.com/
+
+- [Lucid chart](https://www.lucidchart.com/pages/) - This was used to create the flow chart in the planning process for this project. 
+- [random word generator](https://randomwordgenerator.com/) - I used this site to generate a list of random words.
+- [code beautifier](https://codebeautify.org/python-formatter-beautifier) - Helped make the code look neat.
+- [PEP8 validator](http://pep8online.com/) - was used to check the code was valid.
