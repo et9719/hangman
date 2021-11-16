@@ -26,13 +26,13 @@ def welcome():
     print("Welcome to Hangman!\n\nBefore we start, would you like to see the\
  instructions or are you good to go?")
     # Ask user to choose if they want to see instructions or not.
-    see_instructions = input("Please type 1 to see the instructions,or 2 for\
+    see_instructions = input("Please type 1 to see the instructions, or 2 for\
  good to go!:\n")
     # Make sure users input is valid.
     while see_instructions != "1" and see_instructions != "2":
         see_instructions = input("\n\033[1;31;40mInvalid input, Please type 1 to see the\
  instructions, or 2 to skip them and start the game:\n")
-    # Take user to relevent page.
+    # Take user to relevant page.
     if see_instructions == "1":
         instructions()
     else:
@@ -59,7 +59,7 @@ def instructions():
     while ready != "1" and ready != "2":
         ready = input("\n\033[1;31;40mInvalid input, if you are ready\
  press 1 if not press 2:\n")
-    # Take user to relevent page.
+    # Take user to relevant page.
     if ready == "1":
         play()
     else:
@@ -76,13 +76,13 @@ def play_again():
     while play_again_q != "1" and play_again_q != "2":
         play_again_q = input("\n\033[1;31;40mInvalid input, if you want\
  to play again press 1 if not press 2:\n")
-    # Take user to relevent page.
+    # Take user to relevant page.
     if play_again_q == "1":
         play()
     else:
         os.system("cls" if os.name == "nt" else "clear")
         title()
-        print("Thanks for playing, goodBye!")
+        print("Thanks for playing, GoodBye!")
 
 
 def play():
@@ -146,7 +146,7 @@ def play():
     if guessed is True:
         os.system("cls" if os.name == "nt" else "clear")
         title()
-        print("Congratualtions!\nYou guessed the word, You win!\n")
+        print("Congratulations!\nYou guessed the word, You win!\n")
         play_again()
     # If the user runs out of tries:
     else:
