@@ -3,7 +3,8 @@ All imports.
 """
 import os
 import random
-from words import words
+from words import easy_words
+from words import hard_words
 
 
 def title():
@@ -36,7 +37,8 @@ def welcome():
     if see_instructions == "1":
         instructions()
     else:
-        play()
+        get_word()
+        # play()
 
 
 def instructions():
@@ -51,8 +53,8 @@ def instructions():
  do is guess the word one letter at a time.\n\n1. Type a letter of your\
  choice and hit enter.\n2. If your guess is correct the letter will show\
  within the hidden word.\n3. If your guess is incorrect a section of the\
- hangman picture will appear.\n4. Keep guessing until either you guess\
- the correct word or you run out of tries\n")
+ hangman picture will appear.\n4. Keep guessing until you guess\
+ the correct word or you run out of tries.\n")
     # Ask user if they are ready to play.
     print("Are you ready to play?")
     ready = input("Please type 1 for yes and 2 for no:\n")
@@ -62,7 +64,8 @@ def instructions():
  press 1 if not press 2:\n")
     # Take user to relevant page.
     if ready == "1":
-        play()
+        get_word()
+        # play()
     else:
         welcome()
 
@@ -79,18 +82,38 @@ def play_again():
  to play again press 1 if not press 2:\n")
     # Take user to relevant page.
     if play_again_q == "1":
-        play()
+        get_word()
+        # play()
     else:
         os.system("cls" if os.name == "nt" else "clear")
         title()
         print("Thanks for playing, GoodBye!")
 
 
-def play():
+def get_word():
+    """
+    Generate word depending on level user would like to play.
+    """
+    print("\n")
+    level = input("\033[1;34mWhat difficaulty would you like to play?\nplease\
+ press 1 for easy or 2 for hard:\n")
+    # Make sure users input is valid.
+    while level != "1" and level != "2":
+        level = input("\n\033[1;31mInvalid input, press 1 for an easy game \
+ or 2 for hard game:\n")
+    # write here
+    if level == "1":
+        word = random.choice(easy_words)
+        play(word)
+    else:
+        word = random.choice(hard_words)
+        play(word)
+
+
+def play(word):
     """
     Get word from words.py, ask user to guess a letter and compare results.
     """
-    word = random.choice(words)
     tries = 6
     # guessed = False
     word_letters = set(word)

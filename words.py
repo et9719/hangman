@@ -1,7 +1,8 @@
 """
-    define words liat
+    define words lists
 """
-words = ['BOARD',
+easy_words = [
+         'BOARD',
          'HOME',
          'MONK',
          'LION',
@@ -30,7 +31,11 @@ words = ['BOARD',
          'BALL',
          'VIDEO',
          'FLOOD',
-         'PEACE',
+         'PEACE'
+         ]
+
+
+hard_words = [
          'COMPETE',
          'UNLAWFUL',
          'INVESTMENT',
@@ -61,69 +66,3 @@ words = ['BOARD',
          'RATIONAL',
          'ARGUMENT'
          ]
-
-# easy_words = [
-#     'board',
-#     'home',
-#     'monk',
-#     'lion',
-#     'deck',
-#     'fall',
-#     'faith',
-#     'corn',
-#     'thick',
-#     'list',
-#     'dance',
-#     'waste',
-#     'dairy',
-#     'wine',
-#     'few',
-#     'tire',
-#     'text',
-#     'agile',
-#     'child',
-#     'wreck',
-#     'white',
-#     'carve',
-#     'rumor',
-#     'width',
-#     'pile',
-#     'bake',
-#     'ball',
-#     'video',
-#     'flood',
-#     'peace'
-# ]
-
-# hard_words = [
-#     'compete',
-#     'unlawful',
-#     'investment',
-#     'plastic',
-#     'suspicion',
-#     'complex',
-#     'innocent',
-#     'limited',
-#     'reptile',
-#     'emotion',
-#     'graduate',
-#     'pudding',
-#     'ordinary',
-#     'combine',
-#     'composer',
-#     'minimum',
-#     'confidence',
-#     'feeling',
-#     'effective',
-#     'indication',
-#     'eternal',
-#     'diamond',
-#     'exposure',
-#     'firefighter',
-#     'software',
-#     'register',
-#     'applaud',
-#     'replace',
-#     'rational',
-#     'argument'
-# ]
