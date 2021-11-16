@@ -52,7 +52,7 @@ def instructions():
  choice and hit enter.\n2. If your guess is correct the letter will show\
  within the hidden word.\n3. If your guess is incorrect a section of the\
  hangman picture will appear.\n4. Keep guessing until either you guess\
- the correct word or you run out of tries.\n")
+ the correct word or you run out of tries\n")
     # Ask user if they are ready to play.
     print("Are you ready to play?")
     ready = input("Please type 1 for yes and 2 for no:\n")
