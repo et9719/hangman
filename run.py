@@ -45,6 +45,7 @@ def instructions():
     """
     # clear terminal
     os.system("cls" if os.name == "nt" else "clear")
+    title()
     # print instructions
     print("\033[1;36;40mHow to play:\n\nTo play hangman, all you need to\
  do is guess the word one letter at a time.\n\n1. Type a letter of your\
