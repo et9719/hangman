@@ -43,9 +43,9 @@ Go back to [Table of contents](#table-of-contents)
 
 ## Color scheme
 I decided to add a color scheme to provide a better user experience. By showing error messages and incorrect guesses in red text and correct guesses in green text to make it clearer to the user.
-- General text, Cyan ("\033[1;36;40m").
-- Error messages/Wrong guesses, Red ("\033[1;31;40m").
-- Correct guesses, Green ("\033[1;32;40m").
+- General text, Cyan ("\033[1;36m").
+- Error messages/Wrong guesses, Red ("\033[1;31m").
+- Correct guesses, Green ("\033[1;32m").
 
 Go back to [Table of contents](#table-of-contents)
 
