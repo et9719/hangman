@@ -39,11 +39,15 @@ Throughout the process of making this project I decided to change a couple of th
 
 I decided that these two things were not as important as all the other functions so I would like to either implement them if i have time to at the end of the process or if not I would like to impliment them in the future so I can continue to use this game with family and friends. 
 
+Go back to [Table of contents](#table-of-contents) 
+
 ## Color scheme
 I decided to add a color scheme to provide a better user experience. By showing error messages and incorrect guesses in red text and correct guesses in green text to make it clearer to the user.
 - General text, Cyan ("\033[1;36;40m").
 - Error messages/Wrong guesses, Red ("\033[1;31;40m").
 - Correct guesses, Green ("\033[1;32;40m").
+
+Go back to [Table of contents](#table-of-contents)
 
 ## Features 
 
@@ -82,6 +86,8 @@ I decided to add a color scheme to provide a better user experience. By showing 
 ### Future features
 - I would like to introduce a choice of levels so the user can decide if they want to guess an easy word or a hard word.
 - I would also like to add a visual image of hangman so the user can see how many tries they have left in the more traditional way. 
+
+Go back to [Table of contents](#table-of-contents)
 
 ## Testing
 
@@ -173,6 +179,8 @@ When trying to add "\" to this line it came back with more errors as this is bet
 
 - what did i do to fix it?
 
+Go back to [Table of contents](#table-of-contents)
+
 ## Deployment 
 
 There were many steps to deploying this project to Heroku:
@@ -202,9 +210,13 @@ There were many steps to deploying this project to Heroku:
  - The other option being to manually deploy, which is the choice i went for with this project.
 12. When all the code is recieved from github there is a view button that it a link to the running app, I clicked this to make sure everything was running as expected.
 
+Go back to [Table of contents](#table-of-contents)
+
 ## Finished product
 
 <!-- Add finished product -->
+
+Go back to [Table of contents](#table-of-contents)
 
 ## Credits 
 
@@ -212,3 +224,5 @@ There were many steps to deploying this project to Heroku:
 - [random word generator](https://randomwordgenerator.com/) - I used this site to generate a list of random words.
 - [code beautifier](https://codebeautify.org/python-formatter-beautifier) - Helped make the code look neat.
 - [PEP8 validator](http://pep8online.com/) - was used to check the code was valid.
+
+Go back to [Table of contents](#table-of-contents)
