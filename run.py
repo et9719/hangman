@@ -115,7 +115,6 @@ def play(word):
     Get word from words.py, ask user to guess a letter and compare results.
     """
     tries = 6
-    # guessed = False
     word_letters = set(word)
     guessed_letters = []
     # Clear terminal and print title

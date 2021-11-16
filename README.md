@@ -43,7 +43,8 @@ Go back to [Table of contents](#table-of-contents)
 
 ## Color scheme
 I decided to add a color scheme to provide a better user experience. By showing error messages and incorrect guesses in red text and correct guesses in green text to make it clearer to the user.
-- General text, Cyan ("\033[1;36m").
+- General text, Blue ("\033[1;34m").
+I originally chose to have the writing Cyan ("\033[1;36m") but decided towards the end of the project that i prefered blue.
 - Error messages/Wrong guesses, Red ("\033[1;31m").
 - Correct guesses, Green ("\033[1;32m").
 
@@ -70,7 +71,7 @@ Go back to [Table of contents](#table-of-contents)
 <img src="images/feature-lose.png" alt="Screenshot of the end of the game if the player has lost">
 
 ### Winning message
-- <!--Add description once I have this working-->
+- If the user guesses all letter correctly it will take them to a page that congradulates them and asks the user if they would like to play again.
 <img src="images/feature-win.png" alt="Screenshot of the end of the game if the player has won">
 
 ### Colored text 
@@ -83,9 +84,11 @@ Go back to [Table of contents](#table-of-contents)
 ### Clear terminal
 - Between each page or turn in the game I have cleared the terminal to make it clearer for the user to read. 
 
-### Future features
-- I would like to introduce a choice of levels so the user can decide if they want to guess an easy word or a hard word.
-- I would also like to add a visual image of hangman so the user can see how many tries they have left in the more traditional way. 
+### Extra features
+- I had enough time at the end of this project to add both the hangman image and also give the user the choice of an easy game or a hard game. I had originally put these down as future features but am happy to have been able to impliment them before handing my project in.
+
+<img src="images/hang-img.png" alt="Screenshot of hangman image">
+<img src="images/level.png" alt="Screenshot of the question what level would the user like to play">
 
 Go back to [Table of contents](#table-of-contents)
 
@@ -177,9 +180,40 @@ When trying to add "\" to this line it came back with more errors as this is bet
 
 <img src="images/bug.png" alt="Screenshot of the bug">  
 
-- fixed? 
+- fixed? Yes
 
 - what did I do to fix it?
+ The code I originally had for this was:
+
+     word_letters = set(word)
+    while tries > 0 and len(word_letters) > 0:
+        reveal_word = [letter if letter in guessed_letters else "_" for letter in word]
+        if len(users_guess) == 1 and users_guess.isalpha():
+            if users_guess in guessed_letters:
+            
+            elif users_guess not in word:
+               
+            else:
+                if users_guess in word_letters:
+                    word_letters.remove(users_guess)
+    else:
+        
+I Changed it to:
+
+    word_letters = set(word)
+    while tries > 0 and len(word_letters) > 0:
+        reveal_word = [letter if letter in guessed_letters else "_" for letter in word]
+        if len(users_guess) == 1 and users_guess.isalpha():
+            if users_guess in guessed_letters:
+            
+            elif users_guess not in word:
+               
+            else:
+                if users_guess in word_letters:
+                    word_letters.remove(users_guess)
+    else:
+            
+This menans that every time a user guesses a correct letter, that letter is removed from the word_letters list and when that list is 0 the computer knows that they have guessed the whole word correctly.
 
 Go back to [Table of contents](#table-of-contents)
 
