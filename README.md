@@ -4,6 +4,7 @@ Hangman is a game usually played by two or more people, where one person thinks 
 For this project I wanted to create a version of this game that you can play against the computer rather than playing against another person.
 This is done by using python to generate the word and check if the user's guesses are correct, incorrect, invalid or if the user has already guessed the letter.
 
+<img src="images/responsive.png" alt="image of app on different sized screens">
 
 [Click here to go to the live website!](https://hang-the-guy.herokuapp.com/) 
 
@@ -141,6 +142,7 @@ The Python results came back with the following:
 - To fix this I edited the long lines and made them into multiple shorter lines within the same print/input statement:
     - Before example:
     <img src="images/lines-before.png" alt="Screenshot of a line before"> 
+
     - After example:
     <img src="images/lines-after.png" alt="Screenshot of a line after"> 
 
@@ -319,5 +321,7 @@ Go back to [Table of contents](#table-of-contents)
 - [random word generator](https://randomwordgenerator.com/) - I used this site to generate a list of random words.
 - [code beautifier](https://codebeautify.org/python-formatter-beautifier) - Helped make the code look neat.
 - [PEP8 validator](http://pep8online.com/) - was used to check the code was valid.
+- Youtube - I watched many different youtube videos on how to make hangman using python and learnt alot from many people.
+- Marcel - My mentor Marcel was extreamly helpful as always helping me feel confident in what I have made.
 
 Go back to [Table of contents](#table-of-contents)
