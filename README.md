@@ -10,6 +10,8 @@ This is done by using python to generate the word and check if the user's guesse
 ## Table of contents 
 
 1. [Plans and structure](#plans-and-structure)
+    - [Objectives](#objectives)
+    - [Changes throughout the process](#changes-throughout-the-process)
 2. [Color scheme](#color-scheme)
 3. [Features](#features)
     - [Welcome page](#welcome-page)
@@ -19,7 +21,7 @@ This is done by using python to generate the word and check if the user's guesse
     - [Winning message](#winning-message) 
     - [Colored text](#colored-text) 
     - [Clear terminal](#clear-terminal)
-    - [Future features](#future-features)
+    - [Extra features](#extra-features)
 4. [Testing](#testing)
     - [Python](#python)
     - [Manual Testing](#manual-testing)
@@ -32,19 +34,48 @@ This is done by using python to generate the word and check if the user's guesse
 
 <img src="images/flow.png" alt="Screenshot of the hangman flow chart">  
 
+### Objectives
+
+- I want to create a game that is easy to navigate. 
+    - Was this achieved?
+        - Yes
+    - How was this achieved?
+        - This was achieved by using a simple 1 for yes or 2 for no for each time the user needs to make a choice other than when they are choosing a letter as their guess.  
+                        
+ - I want the game to run in a smooth loop to allow the user to keep playing as many times as they'd like to. 
+    - Was this achieved?
+        - Yes
+    - How was this achieved?
+        - If a play either loses or wins the game it will ask them if they would like to play again 1 for yes and 2 for no. If the user decides they don't want to play anymore it will show a message saying GoodBye but also state that if they would like to carry on playing all they need to do is either refresh the page or click on the run program button above.
+
+- To make it clear to the user how many tries they have left until the game is over.
+    - Was this achieved?
+        - Yes
+    - How was this achieved?
+        - When the user gets a guess wrong the number of tries left is printed and each round if they get the answer right or wrong it will print out the traditional hangman image that shows how many tries the user has left in the game.
+
+- I want to give the user a choice of how hard they would like to challenge themselves.
+    - Was this achieved?
+        - Yes
+    - How was this achieved?
+        - To achieve this I created two lists, one with shorter words making them easier to guess and one with longer words making them a bit harder to guess. I then made a function called get_word, within this function I asked the user what level they would like to play at. If they chose easy it would generate a word from the easier list if they chose hard it would generate a word from the harder list. 
+
+### Changes throughout the process
+
 Throughout the process of making this project I decided to change a couple of things due to the time limit I had to make the game. 
 
 - Originally, I planned to have 2 levels easy and hard so the user could choose the level of difficulty they would like to play.
 - I had also planned to have a visible image of hangman being shown so the user could see how many lives they had left until the game was over. 
 
 I decided that these two things were not as important as all the other functions so I would like to either implement them if I have time to at the end of the process or if not, I would like to implement them in the future so I can continue to use this game with family and friends. 
+(UPDATE: In the last few days of this project I had a little extra time to play around with adding these features in and am happy to say that both the hangman image and the choices between easier words or harder words were implemented!)
 
 Go back to [Table of contents](#table-of-contents) 
 
 ## Color scheme
 I decided to add a color scheme to provide a better user experience. By showing error messages and incorrect guesses in red text and correct guesses in green text to make it clearer to the user.
 - General text, Blue ("\033[1;34m").
-I originally chose to have the writing Cyan ("\033[1;36m") but decided towards the end of the project that i prefered blue.
+I originally chose to have the writing Cyan ("\033[1;36m") but decided towards the end of the project that I preferred blue.
 - Error messages/Wrong guesses, Red ("\033[1;31m").
 - Correct guesses, Green ("\033[1;32m").
 
@@ -63,6 +94,7 @@ Go back to [Table of contents](#table-of-contents)
 ### Game
 - When the user starts the game, it shows the user the length of the word they are guessing and asks the user to enter a letter.
 <img src="images/feature-game.png" alt="Screenshot of game page">
+
 - While the user is playing the game page also shows other things such as if their last guess was valid, correct, or incorrect, how many tries the user has left, what letters the user has used so far and the letters guessed correctly in their positions within the word. 
 <img src="images/feature-game-play.png" alt="Screenshot of game page whilst being played">
 
@@ -85,9 +117,12 @@ Go back to [Table of contents](#table-of-contents)
 - Between each page or turn in the game I have cleared the terminal to make it clearer for the user to read. 
 
 ### Extra features
-- I had enough time at the end of this project to add both the hangman image and also give the user the choice of an easy game or a hard game. I had originally put these down as future features but am happy to have been able to impliment them before handing my project in.
+- I had enough time at the end of this project to add both the hangman image and also give the user the choice of an easy game or a hard game. I had originally put these down as future features but am happy to have been able to implement them before handing my project in.
 
+1. The hangman image will change throughout the game, every time the user guesses a letter wrong, the image adds a section.
 <img src="images/hang-img.png" alt="Screenshot of hangman image">
+
+2. The user now has a choice to play from two different lists of words, one having shorter words that would be easier to guess and the other being longer words that would be a little trickier to figure out.
 <img src="images/level.png" alt="Screenshot of the question what level would the user like to play">
 
 Go back to [Table of contents](#table-of-contents)
@@ -103,14 +138,15 @@ The Python results came back with the following:
 
 - 7x line too long 
 
-- To fix this I added a "\" within the print statements to shorten the lines while keeping the same text.
-However, 1 out of the 7 lines that were too long was:
-reveal_word = [letter if letter in guessed_letters else "_" for letter in word]
-When trying to add "\" to this line it came back with more errors as this is between brackets and not just a string.
+- To fix this I edited the long lines and made them into multiple shorter lines within the same print/input statement:
+    - Before example:
+    <img src="images/lines-before.png" alt="Screenshot of a line before"> 
+    - After example:
+    <img src="images/lines-after.png" alt="Screenshot of a line after"> 
 
-<img src="images/valid.png" alt="Screenshot of the new errors"> 
+- I then retested with PEP8 and it came back clear:
+<img src="images/all-good.png" alt="pep8 after"> 
 
-<!--Add text explaining if you left this as is or if there was anything you could do to get rid of this error-->
 
 ### Manual Testing 
 
@@ -183,9 +219,10 @@ When trying to add "\" to this line it came back with more errors as this is bet
 - fixed? Yes
 
 - what did I do to fix it?
- The code I originally had for this was:
+ 
+The code I originally had for this was:
 
-     word_letters = set(word)
+    guessed = False
     while tries > 0 and len(word_letters) > 0:
         reveal_word = [letter if letter in guessed_letters else "_" for letter in word]
         if len(users_guess) == 1 and users_guess.isalpha():
@@ -194,8 +231,8 @@ When trying to add "\" to this line it came back with more errors as this is bet
             elif users_guess not in word:
                
             else:
-                if users_guess in word_letters:
-                    word_letters.remove(users_guess)
+                if "_" not in word:
+                    guessed = True
     else:
         
 I Changed it to:
@@ -213,7 +250,7 @@ I Changed it to:
                     word_letters.remove(users_guess)
     else:
             
-This menans that every time a user guesses a correct letter, that letter is removed from the word_letters list and when that list is 0 the computer knows that they have guessed the whole word correctly.
+This means that every time a user guesses a correct letter, that letter is removed from the word_letters list and when that list is 0 the computer knows that they have guessed the whole word correctly.
 
 Go back to [Table of contents](#table-of-contents)
 
