@@ -287,7 +287,29 @@ Go back to [Table of contents](#table-of-contents)
 
 ## Finished product
 
-<!-- Add finished product -->
+Welcome page 
+<img src="images/finished-welcome.png" alt="Screenshot of the welcome page"> 
+
+The instructions
+<img src="images/finished-inst.png" alt="Screenshot of the instructions"> 
+
+The game
+<img src="images/finished-game.png" alt="Screenshot of the game"> 
+
+User guesses correct
+<img src="images/finished-correct.png" alt="Screenshot of the user guessing correct letter"> 
+
+User guesses incorrect
+<img src="images/finished-incorrect.png" alt="Screenshot of the user guessing incorrect letter"> 
+
+Winning message
+<img src="images/finished-win.png" alt="Screenshot of the winning message"> 
+
+Losing message
+<img src="images/finished-lose.png" alt="Screenshot of the losing message"> 
+
+End of game
+<img src="images/finished-end.png" alt="Screenshot of the end of the game"> 
 
 Go back to [Table of contents](#table-of-contents)
 
