@@ -6,7 +6,7 @@ This is done by using python to generate the word and check if the user's guesse
 
 <img src="images/responsive.png" alt="image of app on different sized screens">
 
-[Click here to go to the live website!](https://hang-the-guy.herokuapp.com/) 
+[Click here to go to the live website!](https://hang-the-guy.onrender.com) 
 
 ## Table of contents 
 
